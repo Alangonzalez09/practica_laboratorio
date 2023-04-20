@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "typescript",
+			"tsconfig": "ionic-basic/ionic-basic/tsconfig.app.json",
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build",
+			"label": "tsc: compilación: ionic-basic/ionic-basic/tsconfig.app.json"
+		}
+	]
+}
