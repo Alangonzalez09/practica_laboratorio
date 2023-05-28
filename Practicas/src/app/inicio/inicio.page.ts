@@ -18,11 +18,9 @@ export class InicioPage implements OnInit {
     {name:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"},
     {name:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"}
   ];
-
   constructor(
     private router: Router,
-    private envioReceptor: EnvioReceptorService
-  ) { }
+    private envioReceptor: EnvioReceptorService) { }
 
   ngOnInit() {
   }

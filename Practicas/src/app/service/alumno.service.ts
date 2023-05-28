@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Alumno } from '../interface/alumno'
-
+import { Alumno } from '../interface/alumno';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +8,6 @@ export class AlumnoService {
   private alumnos: Alumno[]= [];
 
   constructor() { }
-
 
   public agregarAlumno(alumno: Alumno){
     if(this.alumnos.length>0){
@@ -42,5 +40,4 @@ export class AlumnoService {
     });
     return this.alumnos;
   }
-  
 }

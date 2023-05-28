@@ -6,7 +6,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EnvioReceptorService {
-
   private objectSource = new BehaviorSubject<{}>({});
   private listSource = new BehaviorSubject<any[]>([]);
 
@@ -14,7 +13,7 @@ export class EnvioReceptorService {
   $getListSource = this.listSource.asObservable();
 
   constructor(private http: HttpClient) { }
-  
+
   sendObjectSource(data: any){
     this.objectSource.next(data);
   }

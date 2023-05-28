@@ -5,6 +5,7 @@ import { Receta } from '../interface/receta';
   providedIn: 'root'
 })
 export class RecetaService {
+
   recetas: Receta[]=[
     {
       id: 1, 
@@ -66,8 +67,9 @@ export class RecetaService {
       ]
     }
   ];
+
   constructor() { }
-  
+
   getReceta(idReceta: number){
     return {...this.recetas.find(
       (receta: Receta) =>{

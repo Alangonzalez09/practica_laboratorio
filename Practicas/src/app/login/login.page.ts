@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../interface/user';
-import { ModlaErrorComponent } from '../componentes/modla-error.component';
+import { ModalErrorComponent } from '../componentes/modal-error.component';
 import { ModalController } from '@ionic/angular';
 import { AutService } from '../service/aut.service';
 import { Router } from '@angular/router';
 import { MenuServiceService } from '../service/menu-service.service';
 import {FormGroup, FormBuilder, Validators, FormControl, AbstractControl} from '@angular/forms';
-
 
 @Component({
   selector: 'app-login',
@@ -15,8 +14,8 @@ import {FormGroup, FormBuilder, Validators, FormControl, AbstractControl} from '
 })
 export class LoginPage implements OnInit {
 
-
   user: User = new User();
+
   ionicForm: any;
 
   constructor(
@@ -28,7 +27,7 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.buildForm();
+    this.buildForm()
   }
 
   async onLogin(){
@@ -52,7 +51,7 @@ export class LoginPage implements OnInit {
 
   async openModal(user: any){
     const modal = await this.modalCtrl.create({
-      component: ModlaErrorComponent,
+      component: ModalErrorComponent,
       componentProps:{
         error: 'Ingres password y/o contraseña'
       }
@@ -61,10 +60,10 @@ export class LoginPage implements OnInit {
   }
 
   onRegister(){
-    this.menuService.setTitle("register")
+    this.menuService.setTitle("register");
     this.router.navigate(['/register']);
   }
- 
+
   buildForm(){
     this.ionicForm = this.formBuilder.group({
       email: new FormControl('',{validators: [Validators.email,Validators.required]}),
@@ -87,7 +86,7 @@ export class LoginPage implements OnInit {
   }
 
   notZero(control: AbstractControl) {
-    if (control.value && control.value <= 0) {
+    if (control.value && control.value.monto <= 0) {
       return { 'notZero': true };
     }
     return null;
@@ -95,5 +94,5 @@ export class LoginPage implements OnInit {
 
   ionViewWillEnter(){
     this.ionicForm.reset();
-  }   
+  } 
 }

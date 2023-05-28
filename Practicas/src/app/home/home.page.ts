@@ -12,14 +12,14 @@ export class HomePage {
   constructor(
     private authService: AutService,
     private router: Router
-  ) {
-    onAuthStateChanged(this.authService.getStateAuth(), user=>{
+    ) {
+      onAuthStateChanged(this.authService.getStateAuth(), user=>{
         if(user!=null && user != undefined){
           this.isLoged = true;
         }
       });
     }
-  
+
     onLogout(){
       signOut(this.authService.getStateAuth()).then(response=>{
         console.log("Logout!");
@@ -28,5 +28,4 @@ export class HomePage {
 
       });
     }
-
 }

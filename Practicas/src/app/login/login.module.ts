@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
-import { ModlaErrorComponent } from '../componentes/modla-error.component';
+import { ModalErrorComponent } from '../componentes/modal-error.component';
 
 @NgModule({
   imports: [
@@ -17,6 +17,6 @@ import { ModlaErrorComponent } from '../componentes/modla-error.component';
     LoginPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [LoginPage,ModlaErrorComponent]
+  declarations: [LoginPage, ModalErrorComponent]
 })
 export class LoginPageModule {}
