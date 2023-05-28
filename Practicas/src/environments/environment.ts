@@ -5,12 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig:{
-    apiKey: "AIzaSyBXa64HNPCoS0-a4uub_WL0IKJ7II3p5m4",
-    authDomain: "laboratorio-032.firebaseapp.com",
-    projectId: "laboratorio-032",
-    storageBucket: "laboratorio-032.appspot.com",
-    messagingSenderId: "536196670663",
-    appId: "1:536196670663:web:0da2fc1f21039f6bd24ae2"
+    apiKey: "AIzaSyDSzCpSSkS330JhQGT5xPsXjzr0uOvyejM",
+    authDomain: "laboratorio-app-moviles-83969.firebaseapp.com",
+    projectId: "laboratorio-app-moviles-83969",
+    storageBucket: "laboratorio-app-moviles-83969.appspot.com",
+    messagingSenderId: "1078668012507",
+    appId: "1:1078668012507:web:d52835cf681ba9e1ca55fe",
+    measurementId: "G-4YZ514M4FX"
   }
 };
 
