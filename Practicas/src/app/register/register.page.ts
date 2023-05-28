@@ -5,7 +5,8 @@ import { User } from '../interface/user';
 import { MenuServiceService } from '../service/menu-service.service';
 import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { ModalErrorComponent } from '../componentes/modal-error.component';
+import { ModlaErrorComponent } from '../componentes/modla-error.component';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -14,7 +15,6 @@ import { ModalErrorComponent } from '../componentes/modal-error.component';
 export class RegisterPage implements OnInit {
 
   user: User = new User();
-
   formRegister : any;
 
   constructor(
@@ -29,11 +29,13 @@ export class RegisterPage implements OnInit {
     this.buildForm();
   }
 
+
   async onRegister(){
     this.autSvc.onRegister(this.user).then(user=>{
       if(user){
         console.log('Successfully created user!');
-        this.router.navigate(['/login']);
+        this.menuService.setTitle("presupuesto");
+        this.router.navigate(['/presupuesto']);
       }
     }).catch(error=>{
       if(error.code =='auth/email-already-in-use'){
@@ -59,6 +61,7 @@ export class RegisterPage implements OnInit {
   ionViewWillEnter(){
     this.formRegister.reset();
   }
+
   hasError: any = (controlName: string, errorName: string) => {
 		return !this.formRegister.controls[controlName].valid &&
 			this.formRegister.controls[controlName].hasError(errorName) &&
@@ -74,11 +77,12 @@ export class RegisterPage implements OnInit {
 
   async openModal(user: any){
     const modal = await this.modalCtrl.create({
-      component: ModalErrorComponent,
+      component: ModlaErrorComponent,
       componentProps:{
         error: 'Error al crear el usuario'
       }
     });
     return await modal.present();
   }  
+
 }

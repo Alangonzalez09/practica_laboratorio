@@ -18,9 +18,11 @@ export class InicioPage implements OnInit {
     {name:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"},
     {name:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"}
   ];
+
   constructor(
     private router: Router,
-    private envioReceptor: EnvioReceptorService) { }
+    private envioReceptor: EnvioReceptorService
+  ) { }
 
   ngOnInit() {
   }
@@ -29,7 +31,7 @@ export class InicioPage implements OnInit {
     this.envioReceptor.sendObjectSource(this.user);
     this.envioReceptor.sendListSource(this.list);
 
-    this.router.navigate(['/receptor']);
+    this.router.navigate(['/main/receptor']);
   }
 
 }

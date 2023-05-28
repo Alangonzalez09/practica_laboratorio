@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserPhoto } from '../interface/user-photo';
+import { UserPhoto } from '../interface/photo';
 import { PhotoService } from '../service/photo.service';
 import { ActionSheetController } from '@ionic/angular';
 
@@ -13,7 +13,9 @@ export class GaleriaPage implements OnInit {
   constructor(
     public photoService: PhotoService,
     public actionSheetController: ActionSheetController
-  ) { }
+  ) { 
+    
+  }
 
   async ngOnInit() {
     await this.photoService.loadSaved();
@@ -48,5 +50,4 @@ export class GaleriaPage implements OnInit {
     });
     await actionSheet.present();
   }  
-
 }

@@ -8,7 +8,6 @@ export class MenuServiceService {
 
   private objectSource = new BehaviorSubject<string>("");
   $getTitleMenu = this.objectSource.asObservable();
-
   constructor() { }
 
   setTitle(data: any){

@@ -13,8 +13,9 @@ export class ApiService {
   constructor(
     private http: HttpClient
   ) { }
-   // metodos de crud api
-   getLugaresApi() :Observable<Lugar[]>{
+
+  // metodos de crud api
+  getLugaresApi() :Observable<Lugar[]>{
     return this.http.get<any>(`${this.basePath}/list`,{});
   }
 
@@ -29,5 +30,4 @@ export class ApiService {
   editarLugarApi(id: any, lugar: Lugar): Observable<any>{
     return this.http.put(`${this.basePath}/${id}/update`,lugar,{});
   }
-  
 }

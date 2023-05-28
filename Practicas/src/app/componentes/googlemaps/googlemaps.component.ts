@@ -12,6 +12,7 @@ declare var google: any;
   styleUrls: ['./googlemaps.component.scss'],
 })
 export class GooglemapsComponent implements OnInit {
+
 // posicion inicial del mapa, en caso de que no se le de una por default
 @Input() position : any = {
   lat:  -2.889,
@@ -125,5 +126,6 @@ positionSet: any;
     console.log('click aceptar ->', this.positionSet);
     this.modalController.dismiss({pos: this.positionSet});
   }
+
 
 }

@@ -3,14 +3,13 @@ import { environment } from 'src/environments/environment';
 
 declare var google: any;
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class GooglemapsService {
   apikey: string = environment.apiKeyMaps;
   mapsloaded: boolean = false;
-  
+
   init(renderer: any, document: any){
 
     return new Promise((resolve, reject) => {

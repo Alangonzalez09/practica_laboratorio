@@ -125,8 +125,8 @@ export class DestinosPage implements OnInit {
 				this.longitud = null;
 			}, {timeout: 5000, enableHighAccuracy: true });
 		});
-	} 
-  
+	}  
+
   async addDirection(){
     let positionInput: any = {
       lat: -2.898116,
@@ -156,5 +156,5 @@ export class DestinosPage implements OnInit {
       this.latitud = data.pos.lat;
       console.log('datos de ubiciacion actualizados, latitud: '+this.latitud+' \nlongitud:'+this.longitud);
     }
-  }   
+  }  
 }

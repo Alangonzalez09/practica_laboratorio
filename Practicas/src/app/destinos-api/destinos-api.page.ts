@@ -39,7 +39,7 @@ export class DestinosApiPage implements OnInit {
   submitForm(){
 
     //this.lugar = (this.lugar == undefined ? new Lugar() : this.lugar); 
-    
+
     if(this.ionicForm.valid){
       this.lugar.nombre = this.ionicForm.get('nombre').value;
       this.lugar.latitud = this.latitud;
@@ -140,5 +140,4 @@ export class DestinosApiPage implements OnInit {
   errorProceso(){
     alert("Ocurrio un error en el proceso");
   }
-
 }

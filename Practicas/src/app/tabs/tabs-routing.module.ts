@@ -14,12 +14,12 @@ const routes: Routes = [
       }
       ,
       {
-        path: 'galeria',
-        loadChildren: () => import('../galeria/galeria.module').then(m=>m.GaleriaPageModule)
+        path: 'recetas',
+        loadChildren: () => import('../receta/receta.module').then(m=>m.RecetaPageModule)
       },
       {
-        path: 'presupuesto',
-        loadChildren: () => import('../presupuesto/presupuesto.module').then(m=>m.PresupuestoPageModule)
+        path: 'galeria',
+        loadChildren: () => import('../galeria/galeria.module').then(m=>m.GaleriaPageModule)
       },
       {
         path:'',
