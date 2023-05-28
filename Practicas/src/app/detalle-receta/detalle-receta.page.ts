@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Receta } from '../interface/receta';
 import { RecetaService } from '../service/receta.service';
 
-
 @Component({
   selector: 'app-detalle-receta',
   templateUrl: './detalle-receta.page.html',
@@ -14,12 +13,12 @@ export class DetalleRecetaPage implements OnInit {
   idReceta: number = 0;
   receta: any;
 
-
   constructor(
     private recetaService: RecetaService,
     private router: Router,
-    private activateRouter: ActivatedRoute
-  ) { }
+    private activateRouter: ActivatedRoute) { 
+
+  }
 
   ngOnInit() {
     this.activateRouter.paramMap.subscribe((paramMap: any)=>{

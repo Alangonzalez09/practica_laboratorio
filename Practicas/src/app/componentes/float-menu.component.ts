@@ -1,29 +1,24 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Menu } from 'src/app/interface/menu';
 import { Router } from '@angular/router';
+import { Menu } from '../interface/menu';
 import { AutService } from '../service/aut.service'; 
 import { MenuServiceService } from 'src/app/service/menu-service.service';
 import { Subscription } from 'rxjs';
 import { onAuthStateChanged } from 'firebase/auth';
-
 @Component({
   selector: 'app-float-menu',
   templateUrl: './float-menu.component.html',
   styleUrls: ['./float-menu.component.scss'],
 })
 export class FloatMenuComponent implements OnInit, OnDestroy {
-  
   titleMenu: string='home';
 
   public isLoged : any = false;
 
   public subscription : Subscription = new Subscription();
-
   datosMenu: Menu[] =[
     {nombre: 'login',enlace:'/login',
     icono:'log-in-outline'},
-    {nombre: 'logout',enlace:'/home',
-    icono:'log-out-outline'}
   ];
   constructor(
     private autService: AutService,
@@ -36,12 +31,12 @@ export class FloatMenuComponent implements OnInit, OnDestroy {
       }
     });
 
-  this.subscription = this.menuService.$getTitleMenu.subscribe(data=>{
-    console.log(data);
-    this.titleMenu =data;
-  });
+    this.subscription = this.menuService.$getTitleMenu.subscribe(data=>{
+      console.log(data);
+      this.titleMenu =data;
+    });
 
-}
+  }
 
   ngOnInit() {}
 
@@ -66,10 +61,12 @@ export class FloatMenuComponent implements OnInit, OnDestroy {
       icono:'restaurant-outline'},
       {nombre: 'inicio',enlace:'/inicio',
       icono:'navigate-outline'},
+      {nombre: 'Turismo',enlace:'/destinos',
+      icono:'airplane'},
       {nombre: 'Tabs',enlace:'/tabs',
       icono:'folder-outline'},
-      {nombre: 'login',enlace:'/login',
-      icono:'log-in-outline'},
+      {nombre: 'Presupuesto',enlace:'/presupuesto',
+    icono:'cash-outline'},
           {nombre: 'logout',enlace:'/home',
           icono:'log-out-outline'}
         ];
@@ -78,11 +75,10 @@ export class FloatMenuComponent implements OnInit, OnDestroy {
      else{
         this.datosMenu =[
           {nombre: 'login',enlace:'/login',
-          icono:'log-in-outline'},
-          {nombre: 'logout',enlace:'/home',
-          icono:'log-out-outline'}
+          icono:'log-in-outline'}
+          
         ];
       }
     });
-  }
+  }  
 }

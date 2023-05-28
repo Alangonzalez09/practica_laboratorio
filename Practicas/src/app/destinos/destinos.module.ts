@@ -4,19 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPageRoutingModule } from './login-routing.module';
+import { DestinosPageRoutingModule } from './destinos-routing.module';
 
-import { LoginPage } from './login.page';
-import { ModlaErrorComponent } from '../componentes/modla-error.component';
+import { DestinosPage } from './destinos.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
+    DestinosPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [LoginPage,ModlaErrorComponent]
+  declarations: [DestinosPage]
 })
-export class LoginPageModule {}
+export class DestinosPageModule {}

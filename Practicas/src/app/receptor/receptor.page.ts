@@ -13,7 +13,9 @@ export class ReceptorPage implements OnInit {
   list: Personaje[]= [];
   personajes: Personaje[]= [];
 
-  constructor(private envioReceptorService: EnvioReceptorService) { }
+  constructor(
+    private envioReceptorService: EnvioReceptorService
+  ) { }
 
   ngOnInit() {
     this.envioReceptorService.$getObjectSource.subscribe(data=>{
