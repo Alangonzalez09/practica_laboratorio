@@ -1,5 +1,7 @@
 {
-  "name": "Proyecto-MLPB",
-  "integrations": {},
+  "name": "ionic-basic",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
