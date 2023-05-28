@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Personaje } from '../../ionic-basic/src/app/personaje';
-import { EnvioReceptorService } from '../../ionic-basic/src/app/service/envio-receptor.service';
+import { Personaje } from '../personaje';
+import { EnvioReceptorService } from '../service/envio-receptor.service';
 
 @Component({
   selector: 'app-inicio',

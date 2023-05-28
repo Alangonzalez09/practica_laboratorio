@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Receta } from '../../../ionic-basic/src/app/receta';
-import { RecetaService } from '../../../ionic-basic/src/app/service/receta.service';
+import { Receta } from '../receta';
+import { RecetaService } from '../service/receta.service';
 
 @Component({
   selector: 'app-detalle-receta',
