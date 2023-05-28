@@ -6,7 +6,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EnvioReceptorService {
-
   private objectSource = new BehaviorSubject<{}>({});
   private listSource = new BehaviorSubject<any[]>([]);
 

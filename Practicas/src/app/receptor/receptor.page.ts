@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Personaje } from '../personaje';
+import { Personaje } from '../interface/personaje';
 import { EnvioReceptorService } from '../service/envio-receptor.service';
 
 @Component({
@@ -13,9 +13,7 @@ export class ReceptorPage implements OnInit {
   list: Personaje[]= [];
   personajes: Personaje[]= [];
 
-  constructor(
-    private envioReceptorService: EnvioReceptorService
-  ) { }
+  constructor(private envioReceptorService: EnvioReceptorService) { }
 
   ngOnInit() {
     this.envioReceptorService.$getObjectSource.subscribe(data=>{

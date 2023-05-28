@@ -1,25 +1,31 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { Router } from '@angular/router';
+import { AutService } from '../service/aut.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  isLoged : any = false;
+  constructor(
+    private authService: AutService,
+    private router: Router
+    ) {
+      onAuthStateChanged(this.authService.getStateAuth(), user=>{
+        if(user!=null && user != undefined){
+          this.isLoged = true;
+        }
+      });
+    }
 
-  constructor(private alertController: AlertController) {}
+    onLogout(){
+      signOut(this.authService.getStateAuth()).then(response=>{
+        console.log("Logout!");
+        this.router.navigateByUrl('/login');
+      }).catch(error=>{
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Mensaje de alerta',
-      subHeader: 'Mensaje importante',
-      message: '¡Este es un mensaje de alerta!',
-      buttons: ['De Acuerdo'],
-    });
-
-    await alert.present();
-  }
-
-
+      });
+    }
 }

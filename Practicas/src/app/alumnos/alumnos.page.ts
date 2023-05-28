@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Alumno } from '../alumno';
+import { Alumno } from '../interface/alumno';
 import { AlumnoService } from '../service/alumno.service';
 
 @Component({
@@ -8,14 +8,13 @@ import { AlumnoService } from '../service/alumno.service';
   styleUrls: ['./alumnos.page.scss'],
 })
 export class AlumnosPage implements OnInit {
-  
+
   alumnos:Alumno[]=[];
   nombre: string ='';
   matricula: string = '';
   estado: string = '';
   idActualizar: any|number = 0;
   error: boolean = false;
-
 
   constructor(private alumnoService: AlumnoService) { }
 
@@ -25,7 +24,7 @@ export class AlumnosPage implements OnInit {
       matricula: '745589'},
       {id:2, nombre: 'Isela Rodriguez',
       matricula: '855449'},
-      {id:3, nombre: 'Esteban',
+      {id:3, nombre: 'Estenban',
       matricula: '0021554'}
     ]);
 
@@ -72,5 +71,4 @@ export class AlumnosPage implements OnInit {
     this.nombre = alumno.nombre;
     this.idActualizar = alumno.id;
   }
-
 }
